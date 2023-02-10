@@ -89,11 +89,35 @@
 --#####################################################     5     ###########
 
 --Query:
+-- 1) SELECT name, countrycode from city WHERE NOT name='Serravalle' AND name ILIKE 'serra%';
+-- 2) SELECT name FROM country WHERE code = 'BRA'; 
 
+-- Answer:
+--  name  | countrycode 
+-- -------+-------------
+--  Serra | BRA
+
+--   name  
+-- --------
+--  Brazil
+
+--################################################################
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll follow right behind you!
 
+
+--#####################################################     6     ###########
+
+--Query:
+-- SELECT ct.name FROM city ct JOIN country c  ON c.code = ct.countrycode WHERE c.code = 'BRA' AND c.capital = ct.id;
+
+--Answer:
+--     name    
+-- ------------
+--  Brasï¿½lia
+
+--################################################################
 
 
 
